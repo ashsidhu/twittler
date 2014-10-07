@@ -52,6 +52,9 @@ for(var i = 0; i < 10; i++){
 
 var scheduleNextTweet = function(){
   generateRandomTweet();
+  if (typeof displayTweets !== 'undefined') {
+    displayTweets();
+  }
   setTimeout(scheduleNextTweet, Math.random() * 1500);
 };
 scheduleNextTweet();
